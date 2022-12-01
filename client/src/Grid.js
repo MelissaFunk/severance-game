@@ -12,8 +12,11 @@ function Grid() {
   }, [])
 
   const handleClick = (e, val) => {
-    val.correct === true && val.number === 6 ? history.push('/maze') : console.log("no")
-    // val.correct === true && val.number === 5 ? history.push('/o&d') : console.log("no")
+     if (val.correct === true && val.number === 6) {
+      history.push('/maze')
+     } else {
+      return null
+     }
   }
 
   return(

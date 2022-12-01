@@ -180,7 +180,6 @@ body {
 
 .maze-table {
   border-collapse: collapse;
-  margin: auto;
   width: 900px;
   height: 400px;
   position: absolute;
@@ -204,4 +203,10 @@ body {
   position: absolute;
   width: 60px;
   height: 55px
+}
+
+.counter {
+  position: absolute;
+  top: 660px;
+  left: 590px
 }

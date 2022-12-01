@@ -13,7 +13,7 @@ function Login({ trigger, setTrigger, setCurrentUser }) {
     fetch('/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: userSign })
+      body: JSON.stringify({ username: userSign, correct: 0 })
     })
     .then(res => {
       if(res.ok) {

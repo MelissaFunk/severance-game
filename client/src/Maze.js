@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Maze() {
   const [top, setTop] = useState(237)
   const [left, setLeft] = useState(197)
+  const [counter, setCounter] = useState(15)
+
+  useEffect(() => {
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000)
+    return () => clearInterval(timer)
+  }, [counter])
 
   const handleKeyPress = (e) => {
     if (e.key === 'ArrowDown') {
@@ -65,12 +72,13 @@ function Maze() {
   return(
     <div className="maze-div" tabIndex={0} onKeyDown={e => handleKeyPress(e)}>
       <h1>MAZE</h1>
-      <p>Make your way through the Lumon hallways using arrow keys to find <span className="helly-name">Helly</span>. Click anywhere on the maze to start.</p>
+      <p>Make your way through the Lumon hallways using arrow keys to find <span className="helly-name">Helly</span> before time runs out. Click anywhere on the maze to start. | <span className="helly-name">{counter}</span> seconds left</p>
       <div 
         className="dodger" 
         style={{top: top, left: left}} 
       />
       <table className="maze-table">
+        <tbody>
         <tr>
           <td></td>
           <td className="maze-block"></td>
@@ -190,6 +198,7 @@ function Maze() {
           <td></td>
           <td style={{ background: top === 579 && left === 1037 ? "green" : "red" }}></td>
         </tr>
+        </tbody>
       </table>
     </div>
   )
