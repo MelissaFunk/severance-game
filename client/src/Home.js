@@ -6,7 +6,7 @@ function Home({ setCurrentUser }) {
 
   return(
     <div className="home-div">
-      <img className="elevator-img" src="https://i.imgur.com/adgyNsQ.jpg" onClick={() => setLoginButtonPopup(true)}/>
+      <img className="elevator-img" src="https://i.imgur.com/adgyNsQ.jpg" alt="elevator"onClick={() => setLoginButtonPopup(true)}/>
       <Login trigger={loginButtonPopup} setTrigger={setLoginButtonPopup} setCurrentUser={setCurrentUser}></Login>
     </div>
   )

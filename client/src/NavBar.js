@@ -17,8 +17,8 @@ function NavBar({ setCurrentUser }) {
 
   return(
     <div className="navbar-div">
-      <img className="navbar-logo" src="https://lumon.industries/meta/img/lumon-globe.jpg?v=1"/>
-      <img className="navbar-elevator" src="https://i.imgur.com/KGiLdOt.jpg" onClick={() => handleLogout()}/>
+      <img className="navbar-logo" src="https://lumon.industries/meta/img/lumon-globe.jpg?v=1" alt="logo"/>
+      <img className="navbar-elevator" src="https://i.imgur.com/KGiLdOt.jpg" alt="nav-elevator" onClick={() => handleLogout()}/>
     </div>
   )
 }
